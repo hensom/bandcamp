@@ -1,0 +1,19 @@
+This project provides a python wrapper for the Bandcamp API.
+
+  http://bandcamptech.wordpress.com/2010/05/15/bandcamp-api/
+
+Requirements:
+
+  jsonmodels: http://github.com/hensom/jsonmodels
+
+Sample Usage:
+
+from bandcamp import BandCampService
+
+api_key = 'asd'
+
+service = BandCampService(api_key)
+band    = service.get_band_by_url('guards')
+discs   = service.get_discography_by_band_url(band.subdomain)
+album   = service.get_album(disc[0].id)
+track   = service.get_track(album.tracks[0].id)
